@@ -63,7 +63,7 @@ filling = False
 drawing = True
 pygame.font.init()
 
-def dijkstra(grid, start, end):
+def algo(grid, start, end):
     rows, cols = len(grid), len(grid[0])
     min_heap = [(0, start, [])]
     visited = set()
@@ -90,7 +90,7 @@ def dijkstra(grid, start, end):
                 heapq.heappush(min_heap, (new_cost, neighbor, new_path))
 
         if check_var.get() == "on":
-            time.sleep(0.05)  # delay
+            time.sleep(0.005)  # delay
             screen.fill(BLACK)
 
             # grid
@@ -192,7 +192,11 @@ while running:
     pygame.display.update()
 
     if not drawing:
-        shortest_path_nodes = dijkstra(grid, (starting_x, starting_y), (ending_x, ending_y))
+        start_time = time.time()
+        shortest_path_nodes = algo(grid, (starting_x, starting_y), (ending_x, ending_y))
+        end_time = time.time()
+        run_time = end_time - start_time
+        print(run_time)
         drawing = True
 
 pygame.quit()
