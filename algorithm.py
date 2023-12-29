@@ -66,7 +66,7 @@ pygame.font.init()
 def algo(grid, start, end):
     rows, cols = len(grid), len(grid[0])
     min_heap = [(0, start, [])]
-    visited = set()
+    explored = set()
 
     while min_heap:
         cost, current_node, path = heapq.heappop(min_heap)
@@ -74,17 +74,17 @@ def algo(grid, start, end):
         if current_node == end:
             return path + [current_node]
 
-        if current_node in visited:
+        if current_node in explored:
             continue
 
-        visited.add(current_node)
+        explored.add(current_node)
 
         x, y = current_node
         neighbors = [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]
 
         for neighbor in neighbors:
             nx, ny = neighbor
-            if 0 <= nx < rows and 0 <= ny < cols and grid[nx][ny] != 1 and neighbor not in visited:
+            if 0 <= nx < rows and 0 <= ny < cols and grid[nx][ny] != 1 and neighbor not in explored:
                 new_cost = cost + 1
                 new_path = path + [current_node]
                 heapq.heappush(min_heap, (new_cost, neighbor, new_path))
@@ -115,7 +115,7 @@ def algo(grid, start, end):
                         pygame.draw.rect(screen, WHITE, (x, y, 25, 25))
 
             # explored cells
-            for node in visited:
+            for node in explored:
                 x, y = node
                 pygame.draw.rect(screen, VISITED_COLOR, (x * 25, y * 25, 25, 25))
 
@@ -125,7 +125,6 @@ def algo(grid, start, end):
 
 grid = [[0] * 24 for w in range(24)]
 
-# paths
 shortest_path_nodes = []
 
 # game loop
