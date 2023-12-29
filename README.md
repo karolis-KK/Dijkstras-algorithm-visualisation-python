@@ -1,1 +1,1 @@
-# A* Search Algorithm
+# Dijkstra's Algorithm visualisation
