@@ -1,6 +1,13 @@
-# Dijkstra's Algorithm visualisation
-Simple visualisation of the Dijkstra's algorithm with the option to turn on and off the search visualisation
+# Dijkstra's Algorithm Visualization in Python (Pygame)
 
-**Run algorithm.py to run the program**
+![Dijkstra's Algorithm Visualization](screenshots/screenshot1.png)
 
-Might add a c++ version to this repo in the future
+## Overview
+
+This project is a Python implementation of Dijkstra's algorithm for pathfinding, visualized using the Pygame library.
+
+## Requirements
+
+Install the required dependencies: `pip install -r requirements.txt`
+
+Feel free to contribute.
