@@ -1,6 +1,8 @@
 # Dijkstra's Algorithm Visualization in Python (Pygame)
 
-![Dijkstra's Algorithm Visualization](screenshots/screenshot1.PNG)
+<p align="center">
+  <img src="screenshots/screenshot1.PNG" alt="Dijkstra's Algorithm Visualization">
+</p>
 
 ## Overview
 
