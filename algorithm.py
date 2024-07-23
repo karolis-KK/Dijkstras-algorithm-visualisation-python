@@ -90,7 +90,7 @@ def algo(grid, start, end):
                 heapq.heappush(min_heap, (new_cost, neighbor, new_path))
 
         if check_var.get() == "on":
-            time.sleep(0.01)  # delay                       --------------------------------INCREASE DELAY IF THE PROGRAM CRASHES--------------------------------
+            time.sleep(0.1)  # delay                       --------------------------------INCREASE DELAY IF THE PROGRAM CRASHES--------------------------------
             screen.fill(BLACK)
 
             # grid
